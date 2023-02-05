@@ -867,6 +867,10 @@ body.fixed {
     overflow: hidden;
 }
 
+header.fixed {
+    overflow: hidden;
+}
+
 @media screen and (max-width:1170px) {
     .content {
         padding-left: 10px;
