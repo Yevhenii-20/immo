@@ -959,6 +959,7 @@ body.fixed {
         z-index: 99;
         left: -100%;
         transition: 0.6s;
+        overflow-x: hidden;
     }
 
     .header-navigation_block.show {
