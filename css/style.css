@@ -414,7 +414,7 @@ template {
 a {
     text-decoration: none;
     color: #000;
-    display: block;
+    display: inline-block;
 }
 
 :root {
@@ -813,6 +813,7 @@ textarea {
     background-repeat: no-repeat;
     background-size: 20px;
     background-position: bottom 13px right 10px;
+    background-color: #fcfcfc;
 }
 
 .left-result select {
@@ -821,11 +822,12 @@ textarea {
 
 .result-block {
     background: #fff;
-    height: 210px;
+    min-height: 200px;
     box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 10%);
     width: 100%;
     display: flex;
     align-items: flex-start;
+    margin-top: 25px;
 }
 
 .result-img {
@@ -854,7 +856,7 @@ textarea {
 }
 
 .new-item {
-    background-color: #44b272;
+    background-color: var(--mainGreen);
     font-size: 14px;
     width: 150px;
     position: absolute;
@@ -907,10 +909,10 @@ textarea {
 }
 
 .item-details {
-    border: 1px solid #44b272;
+    border: 1px solid var(--mainGreen);
     background: #fff;
     font-size: 18px;
-    color: #44b272;
+    color: var(--mainGreen);
     display: inline-block;
     border-radius: 3px;
     padding: 10px 15px;
@@ -918,7 +920,7 @@ textarea {
 }
 
 .item-details:hover {
-    background: #44b272;
+    background: var(--mainGreen);
     transition: 0.3s;
     color: #fff;
 }
@@ -965,6 +967,146 @@ sup {
 
 .footer-menu a:hover {
     color: var(--grey);
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.pagination a {
+    color: #000;
+    font-size: 12px;
+    padding: 12px 16px;
+    background-color: #f2f2f2;
+    border-radius: 3px;
+}
+
+.pagination a:hover {
+    color: #fff;
+    background: var(--mainGreen);
+    transition: 0.3s;
+}
+
+.paginations-numbers {
+    display: flex;
+}
+
+.paginations-numbers a {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.result-text {
+    border-top: 1px solid #eaeaea;
+    padding-top: 20px;
+    margin-top: 25px;
+    font-size: 15px;
+    line-height: 27px;
+    color: #000;
+}
+
+.result-text a {
+    color: var(--mainGreen);
+    text-decoration: underline;
+}
+
+.right-result {
+    width: 32%;
+}
+
+.result-form-title {
+    font-size: 18px;
+}
+
+.result-form {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.result-form select {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.result-input {
+    padding: 15px 18px;
+    background-color: #fcfcfc;
+    font-weight: 400;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.result-input::placeholder {
+    color: #000;
+}
+
+.result-flex-select {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.result-flex-select select {
+    width: 48%;
+}
+
+.search-button {
+    background: var(--mainGreen);
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 4px;
+    border: transparent;
+    color: #fff;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.search-button:hover {
+    background: #118843;
+}
+
+.save-search {
+    margin-top: 20px;
+    width: 100%;
+    display: block;
+    border: 1px solid var(--mainGreen);
+    background: #fff;
+    color: var(--mainGreen);
+    font-size: 15px;
+    padding: 15px 20px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.save-search:hover {
+    background: var(--mainGreen);
+    color: #fff;
+}
+
+.result-checkbox {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.result-checkbox input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.result-checkbox label {
+    font-size: 15px;
+    margin-left: 10px;
+    cursor: pointer;
 }
 
 /*-- END FOOTER --*/
@@ -1056,6 +1198,24 @@ header.fixed {
     .property-order_block {
         width: 35%;
     }
+
+    .result-block {
+        min-height: auto;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .flex-result {
+        flex-direction: column;
+    }
+
+    .left-result, .right-result {
+        width: 100%;
+    }
+
+    .right-result {
+        margin-top: 30px;
+    }
 }
 
 @media screen and (max-width:780px) {
@@ -1128,7 +1288,7 @@ header.fixed {
         position: fixed;
         width: 100%;
         min-height: 100%;
-        z-index: 99;
+        z-index: 999;
         left: -100%;
         transition: 0.6s;
         overflow-x: hidden;
@@ -1140,6 +1300,45 @@ header.fixed {
         margin-top: -1px;
     }
 
+    .result-block {
+        flex-direction: column;
+        width: 48%;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+    .result-img {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .listing {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .info-item {
+        width: 100%;
+    }
+
+    .meters-item {
+        margin-top: 0px;
+    }
+
+    .price-detail {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .item-details {
+        margin-top: 10px;
+    }
+
+    .price-item {
+        padding: 20px;
+    }
 }
 
 @media screen and (max-width:500px) {
@@ -1169,6 +1368,32 @@ header.fixed {
     .footer-menu {
         padding-top: 8px;
         padding-bottom: 8px;
+    }
+
+    .result-block {
+        width: 100%;
+    }
+
+    .price-detail {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .info-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .meters-item {
+        order: 1;
+    }
+
+    .price-detail {
+        order: 2;
+    }
+
+    .meters-item {
+        padding: 10px 20px;
     }
 }
 
