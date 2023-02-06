@@ -458,6 +458,7 @@ textarea {
 .logo {
     color: var(--mainGreen);
     font-size: 24px;
+    font-weight: 500;
 }
 
 .logo:hover {
@@ -480,9 +481,10 @@ textarea {
 }
 
 .header-navigation a, .language_block a {
-    font-size: 16px;
+    font-size: 18px;
     color: #fff;
-    padding: 20px;
+    padding: 15px;
+    font-weight: 500;
 }
 
 .header-navigation a:hover, .language_block a:hover {
