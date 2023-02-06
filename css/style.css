@@ -420,7 +420,8 @@ a {
 :root {
     --black: #000;
     --grey: #333;
-    --mainGreen: #44b272;
+    /*--mainGreen: #44b272;*/
+    --mainGreen: #085026;
 }
 
 body {
